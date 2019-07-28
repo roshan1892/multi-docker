@@ -5,7 +5,6 @@ before_install:
    - docker build -t roshan1892/react-test -f ./client/Dockerfile.dev ./client
 script:
    - docker run roshan1892/react-test npm test -- --coverage
-     mvn install.travis_wait
 after_success:
    - docker build -t roshan1892/multi-client ./client     
    - docker build -t roshan1892/multi-nginx ./nginx     
